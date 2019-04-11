@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TaxCalculator</class>
+ <widget class="QMainWindow" name="TaxCalculator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1701</width>
+    <height>819</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>267</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Salaries Tax Computation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>100</y>
+      <width>266</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Year of assessment   2018/19</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>160</y>
+      <width>123</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Marital status</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radio_single">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>160</y>
+      <width>375</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Single/Separated/Divorced/Widowed</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radio_married">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>160</y>
+      <width>115</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Married</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>400</y>
+      <width>121</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Total Income</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>510</y>
+      <width>154</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Total Deductions</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="total_income_self">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>390</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="total_deduction_self">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>500</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="total_income_spouse">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>390</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="total_deduction_spouse">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>500</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>250</y>
+      <width>141</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Self&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;HK$&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(Exclude cents)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>250</y>
+      <width>141</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Spouse&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;HK$&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(Exclude cents)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_reset">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>660</y>
+      <width>150</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_submit">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>660</y>
+      <width>150</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Submit</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="result_married">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>290</y>
+      <width>901</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>Total Income</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Total Deductions</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Total Allowances</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Net Chargeable Income</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Tax Payable</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Total Tax</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>HK$</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>HK$</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>HK$</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QTableWidget" name="result_single">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>290</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>Total Income</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Total Deductions</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Total Allowances</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Net Chargeable Income</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Tax Payable</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>HK$</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLabel" name="label_self">
+    <property name="geometry">
+     <rect>
+      <x>1160</x>
+      <y>240</y>
+      <width>38</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Self</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_spouse">
+    <property name="geometry">
+     <rect>
+      <x>1350</x>
+      <y>240</y>
+      <width>65</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Spouse</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_UST">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>160</y>
+      <width>225</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Under Separate Taxation</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_UJA">
+    <property name="geometry">
+     <rect>
+      <x>1470</x>
+      <y>160</y>
+      <width>218</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Under Joint Assessment</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_UST2">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>750</y>
+      <width>380</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Under Separate Taxation is recommended</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_UJA2">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>750</y>
+      <width>380</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Under Joint Assessment is recommended</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
